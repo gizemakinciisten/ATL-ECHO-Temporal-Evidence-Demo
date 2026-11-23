@@ -40,6 +40,12 @@ In this evaluation, the observed score exceeds the random-delay 99th percentile.
 
 The source experiment calls its score *Loschmidt*. Here it is described as a **computational structural-similarity score**, not a measurement of physical quantum reversibility. The original dataset, preprocessing, transformation and scoring implementations are **not distributed**. Re-running this script verifies only the arithmetic comparisons above, **not** the experimental findings.
 
+Why the Phase-Order Control Did Not Separate
+The two controls have very different dispersion structures. For the random-delay ensemble, the distance between the mean and the 99th percentile is approximately 0.0007. For the shuffled-phase ensemble, the distance between the mean and the 95th percentile is approximately 0.4157 — roughly three orders of magnitude wider.
+Shuffling the phase order therefore does not primarily lower the score; it inflates its variance. The shuffled-phase mean (0.580282) falls below the observed value (0.707506), yet the upper tail of the same null distribution reaches 0.995939. Randomized phase orderings can produce scores higher than the observed one, which is why the empirical upper-tail probability remains at 0.425.
+Two consequences follow. First, exceeding the random-delay 99th percentile is a weak result in absolute terms: the margin is +0.004326, about 0.6% of the threshold. Second, and more importantly, this statistic does not isolate phase order under the tested conditions. A separation claim would require a null distribution whose dispersion is comparable across controls, or a score that is stable under reordering.
+This is reported as a limitation of the measurement, not as evidence that temporal structure is absent. It also motivates the dispersion-aware checks used in later work.
+
 ## Relationship to the Qwen research
 
 The separate ATL ECHO AI Safety research uses internal model activations in controlled multi-agent scenarios. A pilot with Qwen2.5-1.5B-Instruct reported **34/40** correct source attributions in two validation sets, compared with a five-agent random-choice baseline of 20%. That result comes from **a different experiment** and is not reproduced by this demo. Generalization and independent replication remain open.
