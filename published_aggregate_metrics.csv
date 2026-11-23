@@ -1,0 +1,7 @@
+condition,score,description
+observed,0.707506,Reported ATL_Delay structural similarity score
+random_delay_mean,0.702490,Reported random-delay control mean
+random_delay_p99,0.703180,Reported random-delay control 99th percentile
+shuffled_phase_mean,0.580282,Reported shuffled-phase control mean
+shuffled_phase_p95,0.995939,Reported shuffled-phase control 95th percentile
+shuffled_phase_empirical_p,0.425,Reported empirical upper-tail probability
